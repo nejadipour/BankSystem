@@ -493,23 +493,17 @@ public class Run
      */
     public void addNewAccount()
     {
-        System.out.print("User id                      : ");
-        String id = scanner.next();
-        checkMainMenu(id);
-
         System.out.print("Account type                 : ");
         String type = scanner.next();
         checkMainMenu(type);
 
-        if (! id.equals(runTimeUser.getId()))
-        {
-            System.out.println("Invalid id.");
-            printLogInMenu();
+        System.out.print("Amount                       : ");
+        String amount = scanner.next();
+        checkMainMenu(amount);
+        int intAmount = Integer.parseInt(amount);
 
-        }
-
-        Account newAccount = new Account(id, runTimeUser.getFirstName(),
-                             runTimeUser.getLastName(), type, 0);
+        Account newAccount = new Account(runTimeUser.getId(), runTimeUser.getFirstName(),
+                             runTimeUser.getLastName(), type, intAmount);
 
         runTimeUser.addAccount(newAccount);
         runTimeBankSystem.addAccount(newAccount);
