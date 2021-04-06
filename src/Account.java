@@ -90,7 +90,7 @@ public class Account
      */
     public void printAccountData()
     {
-        System.out.println(getSerial().toString() + ", " + getType() + ", " + getBalance());
+        System.out.println(getSerial().toString() + ", " + getId() + ", " + getFirstName() + " " + getLastName() + ", " + getType() + ", " + getBalance());
 
     }
 
@@ -160,4 +160,23 @@ public class Account
 
     }
 
+    /**
+     * get the first name of the owner of the account
+     * @return firstName field
+     */
+    public String getFirstName()
+    {
+        return firstName;
+
+    }
+
+    /**
+     * get the last name of the owner of the account
+     * @return lastName field
+     */
+    public String getLastName()
+    {
+        return lastName;
+
+    }
 }
