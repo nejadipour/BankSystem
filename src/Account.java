@@ -13,8 +13,8 @@ public class Account
 {
     private final UUID serial;
     private final String id;
-    private String firstName;
-    private String lastName;
+    private final String firstName;
+    private final String lastName;
     private final String type;
     private int balance;
     private final ArrayList<Transaction> transactions;
