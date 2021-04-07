@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * this class stores general data
@@ -90,6 +91,12 @@ public class BankingSystem
      */
     public void removeUser(User user)
     {
+        for (Account account : user.getAccounts())
+        {
+            removeAccount(account);
+
+        }
+
         this.users.remove(user);
 
     }
@@ -202,9 +209,12 @@ public class BankingSystem
      */
     public User findUser(String id)
     {
-        for (User user : users)
+        Iterator<User> userIterator = users.iterator();
+
+        while (userIterator.hasNext())
         {
-            if(user.getId().equals(id))
+            User user = userIterator.next();
+            if (user.getId().equals(id))
             {
                 return user;
 
@@ -224,9 +234,13 @@ public class BankingSystem
      */
     public boolean userExist(User user)
     {
-        for (User userCheck : users)
+        Iterator<User> userIterator = users.iterator();
+
+        while (userIterator.hasNext())
         {
-            if (userCheck.equals(user))
+            User userToCheck = userIterator.next();
+
+            if (userToCheck.equals(user))
             {
                 return true;
 

@@ -103,10 +103,12 @@ public class Run
         if(choiceString.equals("main menu"))
         {
             printMainMenu();
+
         }
         else
         {
             choice = Integer.parseInt(choiceString);
+
         }
 
     }
@@ -630,22 +632,18 @@ public class Run
         if(accountToRemove == null)
         {
             System.out.println("Account doesn't exist.");
-            return;
-        }
 
-        User user = runTimeBankSystem.findUser(accountToRemove.getId());
-
-        if (accountToRemove == null)
-        {
-            System.out.println("Account doesn't exist.");
         }
         else
         {
+            User user = runTimeBankSystem.findUser(accountToRemove.getId());
+
             user.removeAccount(accountToRemove);
             runTimeBankSystem.removeAccount(accountToRemove);
             System.out.println("Account removed.");
 
         }
+
 
     }
 
